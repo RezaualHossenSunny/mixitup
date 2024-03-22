@@ -1,33 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from "react"
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+const [click,setClick]=useState(1) 
 
+function update(id){
+setClick(id)
+}
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="max-w-container mx-auto">
+
+      <div className="flex gap-16 py-7">
+
+      <p onClick={()=> update(1)} className="border-2 border-[#7CFC00] py-4 px-4 bg-[#7CFC00] tex-1xl font-serif font-bold text-[#2F4F4F] cursor-pointer rounded-2xl">language</p>
+      <p onClick={()=> update(2)} className="border-2 border-[#7CFC00] py-4 px-4 bg-[#7CFC00] tex-1xl font-serif font-bold text-[#2F4F4F] cursor-pointer rounded-2xl">language1</p>
+      
+      
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+    
+
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <div className="mt-1">
+        <div className={click === 1? 'show':"setshow" }>sss</div>
+        <div className={click === 2? 'show':"setshow" }>djddjdj</div>
+      </div>
     </>
   )
 }
